@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Add event listener to the Submit button
+    // Submit button
     document.getElementById('submitBtn').addEventListener('click', calculateBmi);
 
-    // Add event listener to the Clear button
+    // Clear button
     document.getElementById('clearBtn').addEventListener('click', reload);
 });
 
 function calculateBmi() {
-    // Get values from input fields
+    // input fields
     let weight = document.getElementById('weight').value;
     let height = document.getElementById('height').value;
 
