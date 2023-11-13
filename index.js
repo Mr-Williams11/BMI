@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function calculateBmi() {
     // Get values from input fields
-    var weight = document.getElementById('weight').value;
-    var height = document.getElementById('height').value;
+    let weight = document.getElementById('weight').value;
+    let height = document.getElementById('height').value;
 
     // Check if values are valid numbers
     if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
@@ -18,13 +18,13 @@ function calculateBmi() {
     }
 
     // Calculate BMI
-    var bmi = (weight / ((height / 100) * (height / 100))).toFixed(2);
+    let bmi = (weight / ((height / 100) * (height / 100))).toFixed(2);
 
     // Display BMI
-    alert("Your BMI is: " + bmi);
+    document.getElementById('bmiValue').innerText = bmi;
 
     // Determine BMI category
-    var bmiCategory = '';
+    let bmiCategory = '';
     if (bmi < 18.5) {
         bmiCategory = 'Underweight';
     } else if (bmi >= 18.5 && bmi <= 24.9) {
@@ -38,11 +38,15 @@ function calculateBmi() {
     }
 
     // Display BMI category
-    alert("Your BMI category is: " + bmiCategory);
+    document.getElementById('bmiCategory').innerText = bmiCategory;
 }
 
 function reload() {
     // Reset input fields
     document.getElementById('weight').value = '';
     document.getElementById('height').value = '';
+
+    // Clear previous results
+    document.getElementById('bmiValue').innerText = '';
+    document.getElementById('bmiCategory').innerText = '';
 }
